@@ -2,6 +2,15 @@
   <img width="200px;" src="https://github.com/woowacourse/javascript-baseball-precourse/blob/main/images/baseball_icon.png?raw=true"/>
 </p>
 <h1 align="middle">숫자 야구 게임</h1>
+## 기능 목록 작성
+
+- 랜덤한 3개의 수를 뽑는 기능
+- 사용자가 3개의 수를 입력하는 기능
+- 사용자가 입력한 숫자와 랜덤한 수를 비교하는 기능
+- 비교한 힌트를 UI로 보여주는 기능
+- 사용자가 잘못된 값을 입력한 경우 alert으로 메세지 보여주는 기능
+- 잘못된 값을 입력한 경우 다시 입력할 수 있게 하는 기능
+- 게임이 종료된 후 재시작 할 수 있는 기능
 
 ## 🔍 진행방식
 
