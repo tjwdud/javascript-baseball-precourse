@@ -55,3 +55,20 @@ export const validationInputValue = (value: string) => {
   }
   return true;
 };
+export const printHint = (ballNum: number, strikeNum: number) => {
+  let result = "";
+  const resultDiv = document.getElementById("result");
+
+  if (ballNum) {
+    result += `${ballNum}${RESULT_MESSAGE.ball} `;
+  }
+  if (strikeNum) {
+    result += `${strikeNum}${RESULT_MESSAGE.strike}`;
+  }
+  if (result.length === 0) {
+    resultDiv.innerText = `${RESULT_MESSAGE.fail}`;
+    return;
+  }
+  resultDiv.innerText = result;
+  return;
+};
