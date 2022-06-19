@@ -6,6 +6,20 @@ const createRandomNumber = () => {
 
   return Array.from(randomNumber).join("");
 };
+
+export function randomNum() {
+  let randomNum = createRandomNumber();
+
+  return {
+    setRandomNum: function set() {
+      randomNum = createRandomNumber();
+      return randomNum;
+    },
+    getRandomNum: function get() {
+      return randomNum;
+    },
+  };
+}
 export const validationInputValue = (value: string) => {
   const valueArr = Array.from(value);
   const set = new Set(valueArr);
