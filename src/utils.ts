@@ -20,6 +20,12 @@ export function randomNum() {
     },
   };
 }
+
+const inputInitialization = () => {
+  const input = document.getElementById("user-input") as HTMLInputElement;
+  input.value = "";
+};
+
 export const validationInputValue = (value: string) => {
   const valueArr = Array.from(value);
   const set = new Set(valueArr);
