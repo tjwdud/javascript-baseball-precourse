@@ -55,6 +55,22 @@ export const validationInputValue = (value: string) => {
   }
   return true;
 };
+
+export const printAnswer = (randomNumber: IRandomNum) => {
+  const resultDiv = document.getElementById("result");
+  resultDiv.innerHTML = `
+  <h4>${RESULT_MESSAGE.success}</h4>
+  <h5>게임을 새로 시작하시겠습니까?</h5>
+  <button id="game-restart-button">게임 재시작</button>
+  `;
+  const restartBtn = document.getElementById("game-restart-button");
+  restartBtn.addEventListener("click", () => {
+    resultDiv.innerHTML = "";
+    inputInitialization();
+    console.log(randomNumber.setRandomNum());
+  });
+};
+
 export const printHint = (ballNum: number, strikeNum: number) => {
   let result = "";
   const resultDiv = document.getElementById("result");
