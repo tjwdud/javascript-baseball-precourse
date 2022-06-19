@@ -1,8 +1,8 @@
-export const createRandomNumber = () => {
+const createRandomNumber = () => {
   let randomNumber = new Set();
   do {
-  } while (randomNumber.size < 3);
     randomNumber.add(MissionUtils.Random.pickNumberInRange(1, 9));
+  } while (randomNumber.size < NUMBER_LENGTH);
 
   return Array.from(randomNumber).join("");
 };
