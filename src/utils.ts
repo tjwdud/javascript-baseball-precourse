@@ -1,3 +1,6 @@
+import { NUMBER_LENGTH, VALIDATION_MESSAGE, RESULT_MESSAGE } from "./constants";
+import { IRandomNum } from "./types/IRandomNum";
+
 const createRandomNumber = () => {
   let randomNumber = new Set();
   do {
