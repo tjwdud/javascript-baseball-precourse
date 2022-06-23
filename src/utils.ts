@@ -29,32 +29,45 @@ const inputInitialization = () => {
   input.value = "";
 };
 
+const isNegativeNumber = (valueArr: Array<string>) => {
+  return valueArr[0] === "-";
+};
+
+const isInputRightNumberCount = (valueArr: Array<string>) => {
+  return valueArr.length !== NUMBER_LENGTH;
+};
+const isDuplicateNumber = (valueArr: Array<string>, set: Set<string>) => {
+  return valueArr.length !== set.size;
+};
+
+const isIncludesZero = (valueArr: Array<string>) => {
+  return valueArr.includes("0");
+};
+
+const alertMark = (message: string) => {
+  alert(message);
+  inputInitialization();
+  return false;
+};
+
 export const validationInputValue = (value: string) => {
   const valueArr = Array.from(value);
   const set = new Set(valueArr);
 
-  if (valueArr[0] === "-") {
-    alert(VALIDATION_MESSAGE.inputPositive);
-    inputInitialization();
-    return false;
+  if (isNegativeNumber(valueArr)) {
+    alertMark(VALIDATION_MESSAGE.inputPositive);
   }
 
-  if (valueArr.length !== NUMBER_LENGTH) {
-    alert(VALIDATION_MESSAGE.inputThree);
-    inputInitialization();
-    return false;
+  if (isInputRightNumberCount(valueArr)) {
+    alertMark(VALIDATION_MESSAGE.inputThree);
   }
 
-  if (valueArr.length !== set.size) {
-    alert(VALIDATION_MESSAGE.inputNoRepetition);
-    inputInitialization();
-    return false;
+  if (isDuplicateNumber(valueArr, set)) {
+    alertMark(VALIDATION_MESSAGE.inputNoRepetition);
   }
 
-  if (valueArr.includes("0")) {
-    alert(VALIDATION_MESSAGE.inputZeroNotIncluded);
-    inputInitialization();
-    return false;
+  if (isIncludesZero(valueArr)) {
+    alertMark(VALIDATION_MESSAGE.inputZeroNotIncluded);
   }
   return true;
 };
